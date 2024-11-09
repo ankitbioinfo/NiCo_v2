@@ -30,6 +30,7 @@ database=['GO_Biological_Process_2021','BioPlanet_2019','Reactome_2016'])
 
 
 <div align="center">
-<img src="posFa2_Stem_TA_c76_GO_Biological_Process_2021.pdf" alt="" width="640">
-
+<img src="Pathway_figures/posFa2_Stem_TA_c76_GO_Biological_Process_2021.png" alt="" width="640">
+<img src="Pathway_figures/posFa2_Stem_TA_c76_BioPlanet_2019.png" alt="" width="640">  
+<img src="Pathway_figures/posFa2_Stem_TA_c76_Reactome_2016.png" alt="" width="640">  
 </div>
