@@ -46,8 +46,9 @@ linewidths=1,
 node_font_size=8,
 alpha=0.1,
 font_weight='normal',
-edge_label_pos=0.35,
-edge_font_size=3)
+edge_label_pos=0.35, #locations of the weight label from edge end 
+edge_font_size=3 # font size of edge label 
+)
 ```
 
 <div align="center">
