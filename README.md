@@ -77,12 +77,12 @@ saveas='pdf',
 correlation_with_spearman=True,        #uses Spearman correlation coefficient for gene-factor association; otherwise, use cosine similarity.
 rps_rpl_mt_genes_included=False,       #If True, include rps, rpl, and mt- genes in the pathway enrichment analysis; if False, exclude these genes. 
 circlesize=12,                         #The size of the dots in the dot plots in pathway enrichment visualization. Increase this value to control marker size in the visualization.
-pathwayCutoff=0.05,                    #Cutoff – Show enriched terms which Adjusted P-value < cutoff. For details see here https://gseapy.readthedocs.io/en/latest/run.html 
+pathwayCutoff=0.05,                    #Cutoff – Show enriched terms which Adjusted P-value < cutoff. For detail see here https://gseapy.readthedocs.io/en/latest/run.html 
 pathwayorganism='Mouse',
 display_plot_as='barplot',             #The format for displaying the pathway analysis plot, either 'barplot' or 'dotplot'.
 fontsize=12,                           #The font size for labels in the pathway visualization plots.
 database=['GO_Biological_Process_2021','BioPlanet_2019','Reactome_2016'],
-                                       #See details to find available databases https://gseapy.readthedocs.io/en/latest/gseapy_example.html
+                                       #See detail to find available databases https://gseapy.readthedocs.io/en/latest/gseapy_example.html
 input_colormap='autumn_r'              #The color map used for visualizing the pathways, available from matplotlib.
 )
 ```
