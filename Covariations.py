@@ -1410,7 +1410,7 @@ def pathway_analysis(input,NOG_pathway=50, choose_factors_id=[],correlation_with
         The significance threshold for including pathways in the output (based on adjusted p-value).
         It show enriched terms which Adjusted P-value < cutoff. Only affects the output figure, not the final output file.
         (default is 0.05)
-        For details see here https://gseapy.readthedocs.io/en/latest/run.html
+        For detail see here https://gseapy.readthedocs.io/en/latest/run.html
 
     pathwayorganism : str, optional
         The organism for which to perform pathway analysis, supported by the GSEApy package (e.g., 'Mouse', 'Human').
@@ -1418,12 +1418,12 @@ def pathway_analysis(input,NOG_pathway=50, choose_factors_id=[],correlation_with
 
     database : list, optional
         A list of pathway databases to use for enrichment analysis in GSEApy package. The options includes 'GO_Biological_Process_2021', 'BioPlanet_2019', and 'Reactome_2016'.
-        See details to find available databases https://gseapy.readthedocs.io/en/latest/gseapy_example.html
+        See detail to find available databases https://gseapy.readthedocs.io/en/latest/gseapy_example.html
         (default is ['GO_Biological_Process_2021', 'BioPlanet_2019', 'Reactome_2016'])
 
     choose_celltypes : list, optional
-         A list of cell types for which pathway enrichment analysis should be performed.
-         If empty, analysis will be performed for all cell types.
+        A list of cell types for which pathway enrichment analysis should be performed.
+        If empty, analysis will be performed for all cell types.
         (default is [])
 
     saveas : str, optional
@@ -1431,8 +1431,7 @@ def pathway_analysis(input,NOG_pathway=50, choose_factors_id=[],correlation_with
         (default is 'pdf')
 
     circlesize : int, optional
-        The size of the dots in the dot plots in pathway enrichment visualization. Increase this value to control marker
-        size in the visualization.
+        The size of the dots in the dot plots in pathway enrichment visualization. Increase this value to control marker size in the visualization.
         (default is 12)
 
     savefigure : bool, optional
@@ -1449,7 +1448,7 @@ def pathway_analysis(input,NOG_pathway=50, choose_factors_id=[],correlation_with
 
     input_colormap : str, optional
         The color map used for visualizing the pathways, available from matplotlib.
-        (default is 'autumn_r')    
+        (default is 'autumn_r')
 
     Outputs
     -------
