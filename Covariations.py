@@ -1371,75 +1371,85 @@ def make_excel_sheet_for_gene_correlation(input):
 
 
 def pathway_analysis(input,NOG_pathway=50, choose_factors_id=[],correlation_with_spearman=True,saveas='pdf',savefigure=False,
- positively_correlated=True,rps_rpl_mt_genes_included=True,choose_celltypes=[],circlesize=12,pathwayCutoff=0.5,
+ positively_correlated=True,rps_rpl_mt_genes_included=True,choose_celltypes=[],circlesize=12,pathwayCutoff=0.05,
  pathwayorganism='Mouse',database=['GO_Biological_Process_2021','BioPlanet_2019','Reactome_2016'],
  display_plot_as='barplot',fontsize=12,input_colormap='autumn_r'):#background_geneName,background_expression
 
     """
-    Perform pathway analysis for gene covariations within niches.
+    Perform pathway enrichment analysis for gene covariations within cell type niches.
 
-    This function utilizes the gene covariation data from the gene_covariation_analysis to perform pathway enrichment analysis using the GSEApy package. It identifies and visualizes the pathways that are significantly enriched among the top genes associated with NMF factors.
+    This function analyzes the gene covariation identified through NMF or iNMF in gene_covariation_analysis and perform pathway enrichment analysis using the GSEApy library.
+    Enriched pathways associated with specific cell types and NMF latent factors are visualized in bar or dot plots.
 
     Parameters
     ----------
     input : object
-        The main input is the output from gene_covariation_analysis.
+        The main input object, which is the output from the gene_covariation_analysis.
 
     NOG_pathway : int, optional
-        Number of top genes associated with NMF factors to search in the pathway database. If no pathways are observed, increase the number of genes or try different databases.
+        The number of top genes associated with each NMF factor to include in the pathway enrichment analysis. If no pathways are observed, increase the number of genes or try different databases.
         (default is 50)
 
     choose_factors_id : list, optional
-        Define the factor IDs for which pathway enrichments should be visualized. If empty, pathways will be saved for all factors.
+        A list of specific factor IDs for which pathway enrichments analysis should be conducted. If empty, enrichment will be computed for all factors.
         (default is [])
 
     correlation_with_spearman : bool, optional
-        If True, visualize gene-factor correlations obtained by Spearman correlation coefficient; otherwise, use cosine similarities.
+        If True, uses Spearman correlation coefficient for gene-factor association; otherwise, use cosine similarity.
         (default is True)
 
     positively_correlated : bool, optional
-        If True and correlation_with_spearman is selected, select positively correlated genes; otherwise, select negatively correlated genes.
+        If True, selects positively correlated genes for enrichment analysis; otherwise, selects negatively correlated genes.
         (default is True)
 
     rps_rpl_mt_genes_included : bool, optional
-        If True, include rps, rpl, and mt genes in the pathway analysis; if False, filter these genes out.
+        If True, include rps, rpl, and mt- genes in the pathway enrichment analysis; if False, exclude these genes.
         (default is True)
 
     pathwayCutoff : float, optional
-        The cutoff parameter for finding pathway-enriched libraries from the top genes for each factor of a given cell type using GSEApy.
-        (default is 0.5)
+        The significance threshold for including pathways in the output (based on adjusted p-value).
+        It show enriched terms which Adjusted P-value < cutoff. Only affects the output figure, not the final output file.
+        (default is 0.05)
+        For details see here https://gseapy.readthedocs.io/en/latest/run.html
 
     pathwayorganism : str, optional
-        The organism used in the GSEApy package.
+        The organism for which to perform pathway analysis, supported by the GSEApy package (e.g., 'Mouse', 'Human').
         (default is 'Mouse')
 
     database : list, optional
-        The databases used in the GSEApy package for pathway analysis. The default includes 'GO_Biological_Process_2021', 'BioPlanet_2019', and 'Reactome_2016'.
+        A list of pathway databases to use for enrichment analysis in GSEApy package. The options includes 'GO_Biological_Process_2021', 'BioPlanet_2019', and 'Reactome_2016'.
+        See details to find available databases https://gseapy.readthedocs.io/en/latest/gseapy_example.html
         (default is ['GO_Biological_Process_2021', 'BioPlanet_2019', 'Reactome_2016'])
 
     choose_celltypes : list, optional
-        Define the cell types for which pathway enrichments should be returned from the Enrichr library. If empty, the output will be generated for all cell types.
+         A list of cell types for which pathway enrichment analysis should be performed.
+         If empty, analysis will be performed for all cell types.
         (default is [])
 
     saveas : str, optional
-        Save the figures in PDF or PNG format (dpi for PNG format is 300).
+        The file format for saving figures, either in PDF or PNG format.
         (default is 'pdf')
 
     circlesize : int, optional
-        The size of the points in the pathway figure. Increase this value if the dots are too small.
+        The size of the dots in the dot plots in pathway enrichment visualization. Increase this value to control marker
+        size in the visualization.
         (default is 12)
 
     savefigure : bool, optional
-        If True, the generated figures will be saved.
+        If True, saves the generated figures to the specified path.
         (default is False)
 
-    showit : bool, optional
-        If True, the generated figures will be displayed.
-        (default is True)
+    display_plot_as : str, optional
+        The format for displaying the pathway analysis plot, either 'barplot' or 'dotplot'.
+        (default is 'barplot')
 
-    figsize : tuple, optional
-        The dimension of the figure size.
-        (default is (12, 10))
+    fontsize : int, optional
+        The font size for labels in the pathway visualization plots.
+        (default is 12)
+
+    input_colormap : str, optional
+        The color map used for visualizing the pathways, available from matplotlib.
+        (default is 'autumn_r')    
 
     Outputs
     -------
