@@ -111,7 +111,8 @@ pathwayCutoff=0.5,
 pathwayorganism='Mouse',
 display_plot_as='dotplot',
 fontsize=12,
-database=['BioPlanet_2019'])
+database=['BioPlanet_2019'],
+input_colormap='autumn_r')
 ```
 
 The output for circlesize 10 and 20 as follows. 
