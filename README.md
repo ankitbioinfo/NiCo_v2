@@ -1,10 +1,13 @@
 # NiCo_v2
 
 In the original version of NiCo cell type niche interactions plot was not good due to darker color used in the color map. 
-There is a way to make the color opacity reduced and it can be used in the following way. 
+There is a way to make the color opacity reduced using `alpha` value and change the colormap using `input_colormap`
+and it can be used in the following way. 
 
 ```
 celltype_niche_interaction_cutoff=0.1
+saveas='png'
+transparent_mode=False
 
 sint.plot_niche_interactions_without_edge_weight(niche_pred_output,
 niche_cutoff=celltype_niche_interaction_cutoff,
@@ -12,14 +15,15 @@ saveas=saveas,
 transparent_mode=transparent_mode,
 showit=True,
 figsize=(10,7),
-dpi=300,
-input_colormap='jet',
-with_labels=True,
-node_size=500,
-linewidths=0.5,
-node_font_size=6,
-alpha=0.5,
-font_weight='bold')
+dpi=300, #Resolution in dots per inch for saving the figure.
+input_colormap='jet', #Color map for node colors, based on matplotlib colormaps.
+with_labels=True, #If True, displays cell type labels on the nodes.
+node_size=500,  #Size of the nodes. 
+linewidths=0.5, #Width of the node border lines. 
+node_font_size=6, #Font size for node labels.
+alpha=0.5, #Opacity level for nodes and edges. Maximum value 1 use full colors and 0 value use no colors. 
+font_weight='bold' # Weight of the font for node labels is in bold letters. Other option is 'normal' 
+)
 ```
 
 <div align="center">
