@@ -27,7 +27,7 @@ font_weight='bold' # Weight of the font for node labels is in bold letters. Othe
 ```
 
 <div align="center">
-<img src="Niche_interactions_without_edge_weights_R0.png" alt="" width="640">
+<img src="niche_interactions/Niche_interactions_without_edge_weights_R0.png" alt="" width="640">
 </div>
 
 
@@ -51,7 +51,7 @@ edge_font_size=3)
 ```
 
 <div align="center">
-<img src="Niche_interactions_without_edge_weights_R0.png" alt="" width="640">
+<img src="niche_interactions/Niche_interactions_with_edge_weights_R0.png" alt="" width="640">
 </div>
 
 
