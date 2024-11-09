@@ -34,3 +34,30 @@ database=['GO_Biological_Process_2021','BioPlanet_2019','Reactome_2016'])
 <img src="Pathway_figures/posFa2_Stem_TA_c76_BioPlanet_2019.png" alt="" width="640">  
 <img src="Pathway_figures/posFa2_Stem_TA_c76_Reactome_2016.png" alt="" width="640">  
 </div>
+
+
+In the earlier dotplot you can control the size of dot using `circlesize=10` command. 
+```
+scov.pathway_analysis(cov_out,
+choose_celltypes=['Stem/TA'],
+NOG_pathway=50,
+choose_factors_id=[2],
+positively_correlated=True,
+savefigure=True,
+saveas='png',
+correlation_with_spearman=True,
+rps_rpl_mt_genes_included=False,
+circlesize=10,
+pathwayCutoff=0.5,
+pathwayorganism='Mouse',
+display_plot_as='dotplot',
+fontsize=12,
+database=['BioPlanet_2019'])
+```
+
+The output for circlesize 10 and 20 as follows. 
+<div align="center">
+<img src="Pathway_figures/posFa2_Stem_TA_c76_BioPlanet_2019_10.png" alt="" width="640">  
+<img src="Pathway_figures/posFa2_Stem_TA_c76_BioPlanet_2019_20.png" alt="" width="640">  
+
+</div>
