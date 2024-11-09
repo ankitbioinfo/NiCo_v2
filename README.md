@@ -8,7 +8,7 @@
 
 
 
-If you want to get barplot in pathway then use display_plot_as='barplot' in the following commands. 
+If you want to get barplot in pathway then use `display_plot_as='barplot'` in the following commands. 
 
 ```
 scov.pathway_analysis(cov_out,
