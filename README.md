@@ -1,5 +1,6 @@
 # NiCo_v2
 
+## Niche Visualization 
 In the original version of NiCo, the cell type niche interactions plots had issues with visibility due to the use of darker colors used in the colormap. 
 In this version, you can reduce the opacity of colors using the `alpha` parameter and change the colormap with `input_colormap`. 
 The popoular choice of colormaps are following: 
@@ -60,7 +61,7 @@ edge_font_size=3 # Font size for edge labels.
 </div>
 
 
-Pathway Plotting 
+## Pathway Visualization 
 
 To visualize pathways with a bar plot, set `display_plot_as='barplot'` as shown below: 
 
