@@ -20,14 +20,14 @@ saveas=saveas,
 transparent_mode=transparent_mode,
 showit=True,
 figsize=(10,7),
-dpi=300, #Resolution in dots per inch for saving the figure.
-input_colormap='jet', #Colormap for node colors, from matplotlib colormaps.
-with_labels=True, #Display cell type labels on the nodes, if True.
-node_size=500,  #Size of the nodes. 
-linewidths=0.5, #Width of the node border lines. 
-node_font_size=6, #Font size for node labels.
-alpha=0.5, #Opacity level for nodes and edges. 1 is fully opaque, and 0 is fully transparent. 
-font_weight='bold' # Font weight for node labels; 'bold' for emphasis, 'normal' otherwise. 
+dpi=300,                #Resolution in dots per inch for saving the figure.
+input_colormap='jet',   #Colormap for node colors, from matplotlib colormaps.
+with_labels=True,       #Display cell type labels on the nodes, if True.
+node_size=500,          #Size of the nodes. 
+linewidths=0.5,         #Width of the node border lines. 
+node_font_size=6,       #Font size for node labels.
+alpha=0.5,              #Opacity level for nodes and edges. 1 is fully opaque, and 0 is fully transparent. 
+font_weight='bold'      #Font weight for node labels; 'bold' for emphasis, 'normal' otherwise. 
 )
 ```
 
@@ -52,8 +52,8 @@ linewidths=1,
 node_font_size=8,
 alpha=0.1,
 font_weight='normal',
-edge_label_pos=0.35, #Relative position of the weight label along the edge. 
-edge_font_size=3 # Font size for edge labels.  
+edge_label_pos=0.35,   #Relative position of the weight label along the edge. 
+edge_font_size=3       #Font size for edge labels.  
 )
 ```
 
@@ -82,7 +82,7 @@ pathwayorganism='Mouse',
 display_plot_as='barplot',             #The format for displaying the pathway analysis plot, either 'barplot' or 'dotplot'.
 fontsize=12,                           #The font size for labels in the pathway visualization plots.
 database=['GO_Biological_Process_2021','BioPlanet_2019','Reactome_2016'],
-#See details to find available databases https://gseapy.readthedocs.io/en/latest/gseapy_example.html
+                                       #See details to find available databases https://gseapy.readthedocs.io/en/latest/gseapy_example.html
 input_colormap='autumn_r'              #The color map used for visualizing the pathways, available from matplotlib.
 )
 ```
