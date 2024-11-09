@@ -63,15 +63,15 @@ In the case of pathway plot. If you want to visualize the pathway using barplot 
 ```
 scov.pathway_analysis(cov_out,
 choose_celltypes=['Stem/TA'],
-NOG_pathway=50,
+NOG_pathway=50, #Number of top genes associated with latent factors 
 choose_factors_id=[2],
 positively_correlated=True,
 savefigure=True,
 saveas='pdf',
 correlation_with_spearman=True,
-rps_rpl_mt_genes_included=False,
-circlesize=12,
-pathwayCutoff=0.5,
+rps_rpl_mt_genes_included=False, #If True, include rps, rpl, and mt genes in the pathway analysis 
+circlesize=12,      #Scaling of the dotsize 
+pathwayCutoff=0.5,  #The cutoff parameter for finding pathway-enriched libraries from the top genes for each factor of a given cell type using GSEApy.
 pathwayorganism='Mouse',
 display_plot_as='barplot',
 fontsize=12,
