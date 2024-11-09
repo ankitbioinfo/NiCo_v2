@@ -5,6 +5,7 @@ In the original version of NiCo, the cell type niche interactions plots had issu
 In this version, you can reduce the opacity of colors using the `alpha` parameter and change the colormap with `input_colormap`. 
 The popoular choice of colormaps are following: 
 'summer', 'autumn', 'winter', 'cool', 'Wistia',  'hot', 'afmhot', 'gist_heat', 'copper','Diverging', 'PiYG', 'PRGn', 'BrBG', 'PuOr', 'RdGy', 'RdBu', 'RdYlBu', 'RdYlGn', 'Spectral', 'coolwarm', 'bwr', 'seismic', 'flag', 'prism', 'ocean', 'gist_earth', 'terrain', 'gist_stern','gist_rainbow', 'rainbow', 'jet', 'turbo' 
+
 For more detail colormap options, refer to the [matplotlib colormap reference](https://matplotlib.org/stable/gallery/color/colormap_reference.html)
 Here's is an example of how to use these options. 
 
