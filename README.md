@@ -1,8 +1,11 @@
 # NiCo_v2
 
-In the original version of NiCo cell type niche interactions plot was not good due to darker color used in the color map. 
-There is a way to make the color opacity reduced using `alpha` value and change the colormap using `input_colormap`
-and it can be used in the following way. To get the details of other avilable color map check the following [website](https://matplotlib.org/stable/gallery/color/colormap_reference.html)
+In the original version of NiCo, the cell type niche interactions plots had issues with visibility due to the use of darker colors used in the colormap. 
+In this version, you can reduce the opacity of colors using the `alpha` parameter and change the colormap with `input_colormap`. 
+The popoular choice of colormaps are following: 
+'summer', 'autumn', 'winter', 'cool', 'Wistia',  'hot', 'afmhot', 'gist_heat', 'copper','Diverging', 'PiYG', 'PRGn', 'BrBG', 'PuOr', 'RdGy', 'RdBu', 'RdYlBu', 'RdYlGn', 'Spectral', 'coolwarm', 'bwr', 'seismic', 'flag', 'prism', 'ocean', 'gist_earth', 'terrain', 'gist_stern','gist_rainbow', 'rainbow', 'jet', 'turbo' 
+For more detail colormap options, refer to the [matplotlib colormap reference](https://matplotlib.org/stable/gallery/color/colormap_reference.html)
+Here's is an example of how to use these options. 
 
 ```
 celltype_niche_interaction_cutoff=0.1
@@ -16,22 +19,21 @@ transparent_mode=transparent_mode,
 showit=True,
 figsize=(10,7),
 dpi=300, #Resolution in dots per inch for saving the figure.
-input_colormap='jet', #Color map for node colors, based on matplotlib colormaps.
-with_labels=True, #If True, displays cell type labels on the nodes.
+input_colormap='jet', #Colormap for node colors, from matplotlib colormaps.
+with_labels=True, #Display cell type labels on the nodes, if True.
 node_size=500,  #Size of the nodes. 
 linewidths=0.5, #Width of the node border lines. 
 node_font_size=6, #Font size for node labels.
-alpha=0.5, #Opacity level for nodes and edges. Maximum value 1 use full colors and 0 value use no colors. 
-font_weight='bold' # Weight of the font for node labels is in bold letters. Other option is 'normal' 
+alpha=0.5, #Opacity level for nodes and edges. 1 is fully opaque, and 0 is fully transparent. 
+font_weight='bold' # Font weight for node labels; 'bold' for emphasis, 'normal' otherwise. 
 )
 ```
-
-Using the edge weight can be used in a following way. 
 
 <div align="center">
 <img src="niche_interactions/Niche_interactions_without_edge_weights_R0.png" alt="" width="640">
 </div>
 
+Using edge weights included in the niche interaction plot can be done as shown below: 
 
 ```
 sint.plot_niche_interactions_with_edge_weight(niche_pred_output,
@@ -48,8 +50,8 @@ linewidths=1,
 node_font_size=8,
 alpha=0.1,
 font_weight='normal',
-edge_label_pos=0.35, #locations of the weight label from edge end 
-edge_font_size=3 # font size of edge label 
+edge_label_pos=0.35, #Relative position of the weight label along the edge. 
+edge_font_size=3 # Font size for edge labels.  
 )
 ```
 
@@ -58,20 +60,22 @@ edge_font_size=3 # font size of edge label
 </div>
 
 
-In the case of pathway plot. If you want to visualize the pathway using barplot then please use the follwoing parameter `display_plot_as='barplot'` in the following commands. 
+Pathway Plotting 
+
+To visualize pathways with a bar plot, set `display_plot_as='barplot'` as shown below: 
 
 ```
 scov.pathway_analysis(cov_out,
 choose_celltypes=['Stem/TA'],
-NOG_pathway=50, #Number of top genes associated with latent factors 
+NOG_pathway=50, #Number of top genes associated with latent factors.  
 choose_factors_id=[2],
 positively_correlated=True,
 savefigure=True,
 saveas='pdf',
 correlation_with_spearman=True,
-rps_rpl_mt_genes_included=False, #If True, include rps, rpl, and mt genes in the pathway analysis 
-circlesize=12,      #Scaling of the dotsize 
-pathwayCutoff=0.5,  #The cutoff parameter for finding pathway-enriched libraries from the top genes for each factor of a given cell type using GSEApy.
+rps_rpl_mt_genes_included=False, #If True, include rps, rpl, and mt genes in the enrichment analysis.  
+circlesize=12,      #Scale of the dot size.  
+pathwayCutoff=0.5,  #Cutoff for pathway enrichment  libraries from the top genes for each factor of a given cell type using GSEApy.
 pathwayorganism='Mouse',
 display_plot_as='barplot',
 fontsize=12,
@@ -86,7 +90,7 @@ database=['GO_Biological_Process_2021','BioPlanet_2019','Reactome_2016'])
 </div>
 
 
-In the earlier dotplot like way to plot the pathways you can also control the size of dot using `circlesize=10` command. 
+In the original dotplot visualization, you can adjust the dot size with `circlesize` parameter as shown below. 
 ```
 scov.pathway_analysis(cov_out,
 choose_celltypes=['Stem/TA'],
