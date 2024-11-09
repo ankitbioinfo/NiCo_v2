@@ -2,7 +2,7 @@
 
 In the original version of NiCo cell type niche interactions plot was not good due to darker color used in the color map. 
 There is a way to make the color opacity reduced using `alpha` value and change the colormap using `input_colormap`
-and it can be used in the following way. 
+and it can be used in the following way. To get the details of other avilable color map check the following [website](https://matplotlib.org/stable/gallery/color/colormap_reference.html)
 
 ```
 celltype_niche_interaction_cutoff=0.1
@@ -25,6 +25,8 @@ alpha=0.5, #Opacity level for nodes and edges. Maximum value 1 use full colors a
 font_weight='bold' # Weight of the font for node labels is in bold letters. Other option is 'normal' 
 )
 ```
+
+Using the edge weight can be used in a following way. 
 
 <div align="center">
 <img src="niche_interactions/Niche_interactions_without_edge_weights_R0.png" alt="" width="640">
@@ -56,9 +58,7 @@ edge_font_size=3 # font size of edge label
 </div>
 
 
-
-
-If you want to get barplot in pathway then use `display_plot_as='barplot'` in the following commands. 
+In the case of pathway plot. If you want to visualize the pathway using barplot then please use the follwoing parameter `display_plot_as='barplot'` in the following commands. 
 
 ```
 scov.pathway_analysis(cov_out,
@@ -86,7 +86,7 @@ database=['GO_Biological_Process_2021','BioPlanet_2019','Reactome_2016'])
 </div>
 
 
-In the earlier dotplot you can control the size of dot using `circlesize=10` command. 
+In the earlier dotplot like way to plot the pathways you can also control the size of dot using `circlesize=10` command. 
 ```
 scov.pathway_analysis(cov_out,
 choose_celltypes=['Stem/TA'],
