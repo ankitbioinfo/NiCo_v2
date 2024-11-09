@@ -68,20 +68,24 @@ To visualize pathways with a bar plot, set `display_plot_as='barplot'` as shown 
 
 ```
 scov.pathway_analysis(cov_out,
-choose_celltypes=['Stem/TA'],
+choose_celltypes=['Stem/TA'],    #analysis will be performed for all cell types.
 NOG_pathway=50, #Number of top genes associated with latent factors.  
 choose_factors_id=[2],
-positively_correlated=True,
+positively_correlated=True, #selects positively correlated genes for enrichment analysis; otherwise, selects negatively correlated genes.
 savefigure=True,
 saveas='pdf',
-correlation_with_spearman=True,
-rps_rpl_mt_genes_included=False, #If True, include rps, rpl, and mt genes in the enrichment analysis.  
-circlesize=12,      #Scale of the dot size.  
-pathwayCutoff=0.5,  #Cutoff for pathway enrichment  libraries from the top genes for each factor of a given cell type using GSEApy.
+correlation_with_spearman=True, #uses Spearman correlation coefficient for gene-factor association; otherwise, use cosine similarity.
+rps_rpl_mt_genes_included=False, #If True, include rps, rpl, and mt- genes in the pathway enrichment analysis; if False, exclude these genes. 
+circlesize=12,      #The size of the dots in the dot plots in pathway enrichment visualization. Increase this value to control marker size in the visualization.
+pathwayCutoff=0.05,  #cutoff – Show enriched terms which Adjusted P-value < cutoff.  
+#For details see here https://gseapy.readthedocs.io/en/latest/run.html 
 pathwayorganism='Mouse',
-display_plot_as='barplot',
-fontsize=12,
-database=['GO_Biological_Process_2021','BioPlanet_2019','Reactome_2016'])
+display_plot_as='barplot', #The format for displaying the pathway analysis plot, either 'barplot' or 'dotplot'.
+fontsize=12, #The font size for labels in the pathway visualization plots.
+database=['GO_Biological_Process_2021','BioPlanet_2019','Reactome_2016'],
+#See details to find available databases https://gseapy.readthedocs.io/en/latest/gseapy_example.html
+input_colormap='autumn_r' #The color map used for visualizing the pathways, available from matplotlib.
+)
 ```
 
 
