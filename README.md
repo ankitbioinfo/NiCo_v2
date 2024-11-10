@@ -44,7 +44,7 @@ transparent_mode=transparent_mode,
 showit=True,
 figsize=(10,7),
 dpi=300,
-input_colormap='winter',
+input_colormap='jet',
 with_labels=True,
 node_size=500,
 linewidths=1,
@@ -57,7 +57,7 @@ edge_font_size=3       #Font size for edge labels.
 ```
 
 <div align="center">
-<img src="niche_interactions/Niche_interactions_with_edge_weights_R000.png" alt="" width="640">
+<img src="niche_interactions/Niche_interactions_with_edge_weights_R0.png" alt="" width="640">
 </div>
 
 
