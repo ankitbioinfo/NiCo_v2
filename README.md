@@ -57,7 +57,7 @@ edge_font_size=3       #Font size for edge labels.
 ```
 
 <div align="center">
-<img src="niche_interactions/Niche_interactions_with_edge_weights_R0.png" alt="" width="640">
+<img src="niche_interactions/Niche_interactions_with_edge_weights_R000.png" alt="" width="640">
 </div>
 
 
